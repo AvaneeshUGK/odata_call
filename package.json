@@ -1,0 +1,43 @@
+{
+  "name": "odata",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "express": "^4",
+    "@sap/xsenv": "4.2.0",
+    "@sap/xssec": "^3",
+    "passport": "^0",
+    "@sap-cloud-sdk/http-client": "^3.11.0",
+    "@sap-cloud-sdk/resilience": "^3.11.0",
+    "cfenv": "1.2.4",
+    "@sap/cds-hana": "^2"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7"
+  },
+  "cds": {
+    "requires": {
+      "auth": "dummy",
+      "destinations": true,
+      "ARIBA_DEV": {
+        "kind": "odata-v2",
+        "credentials": {
+          "destination": "TEST_DEST"
+        },
+        "destinationOptions": {
+          "selectionStrategy": "alwaysProvider",
+          "jwt": null
+        }
+      },
+      "db": "hana"
+    }
+  },
+  "scripts": {
+    "start": "cds-serve"
+  }
+}
